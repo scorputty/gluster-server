@@ -8,5 +8,7 @@
         - xfsprogs
         - glusterfs-server
         - glusterfs-client
+      notify:
+        - restart glusterd
 
     - service: name=glusterd state=started enabled=yes
