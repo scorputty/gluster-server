@@ -23,13 +23,13 @@ Dependencies
 
 none
 
-Example Playbook
-----------------
-- hosts: glusterfs-servers
-  strategy: linear
-  gather_facts: true
-  roles:
-    - role: gluster-server
+## Example Playbook
+
+    - hosts: glusterfs-servers
+      strategy: linear
+      gather_facts: true
+      roles:
+        - role: gluster-server
 
 License
 -------
