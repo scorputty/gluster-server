@@ -10,8 +10,8 @@
     # this is added because of a bug in the gluster_module
     - name: Configure peers (Only on the first host)
       shell: gluster peer probe {{ item }}
-      with_items: "{{ groups.pipelinegluster_group }}"
-      when: "{{ inventory_hostname == groups.pipelinegluster_group[0] }}"
+      with_items: "{{ groups.glusterfs-group }}"
+      when: "{{ inventory_hostname == groups.glusterfs-group[0] }}"
 
     # from here we use the gluster_volume module
     - name: Configure Gluster volume.
@@ -20,7 +20,7 @@
         name: "{{ gluster_volume_name }}"
         brick: "{{ gluster_brick_dir }}"
         replicas: "{{ gluster_replicas }}"
-        cluster: "{{ groups.pipelinegluster_group | join(',') }}"
+        cluster: "{{ groups.glusterfs-group | join(',') }}"
         host: "{{ inventory_hostname }}"
         force: yes
       run_once: true

@@ -1,6 +1,6 @@
 ---
 # Use this file in Tower to kick off the installation of GlusterFS
-- hosts: glusterfs-servers
+- hosts: all
   strategy: linear
   gather_facts: true
   roles:
