@@ -6,8 +6,7 @@ Setup GlusterFS servers using Ansible Tower.
 Requirements
 ------------
 
-Atleast one free unused extra disk per system
-root like access for Ansible tower
+Atleast one unused extra disk per system and root like access for Ansible tower
 
 Role Variables
 --------------
@@ -26,9 +25,6 @@ none
 
 Example Playbook
 ----------------
----
-# This playbook deploys the GlusterFS Server application
-
 - hosts: glusterfs-servers
   strategy: linear
   gather_facts: true
