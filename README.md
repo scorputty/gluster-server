@@ -23,7 +23,7 @@ Dependencies
 
 none
 
-## Example Playbook
+## Example Playbook site.yml
 
     - hosts: glusterfs-servers
       strategy: linear
