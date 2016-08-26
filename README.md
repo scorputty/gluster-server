@@ -29,7 +29,7 @@ none
       strategy: linear
       gather_facts: true
       roles:
-        - role: gluster-server
+        - role: glusterfs-server
 
 License
 -------

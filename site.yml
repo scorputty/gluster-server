@@ -4,4 +4,4 @@
   strategy: linear
   gather_facts: true
   roles:
-    - gluster-server
+    - glusterfs-server
