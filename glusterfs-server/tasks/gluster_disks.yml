@@ -1,7 +1,7 @@
 ---
 # Task to setup xfs gluster disk
-  # check for empty disk on either VMware or VirtualBox
-  # notes to improve: try to re-use item.key instead doing the lookup twice
+# check for empty disk on either VMware or VirtualBox
+
   - name: creating new XFS disk
     filesystem: fstype={{ gluster_filesystem }} dev=/dev/{{ item.key }} opts="-i size=512"
     when: (item.value.model == "Virtual disk") and ((item.value.holders.0 is undefined) and (item.value.partitions|length < 1)) or

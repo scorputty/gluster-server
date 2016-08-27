@@ -1,5 +1,6 @@
 ---
-# tasks file for gluster-server
+# tasks file for glusterfs-server
+
 - include: setup_repo.yml
 - include: install_packages.yml
 - include: gluster_disks.yml

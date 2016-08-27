@@ -1,5 +1,6 @@
 ---
-# defaults file for gluster-server
+# defaults file for glusterfs-server
+
 gluster_package_version: '37'
 gluster_filesystem: "xfs"
 gluster_brick_dir: "/glusterfs/brick1"

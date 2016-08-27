@@ -1,19 +1,12 @@
 ---
-# Task to create GlusterFS Volumes
+# Task to create GlusterFS volume
 
     - name: Ensure Gluster brick and mount directories exist.
       file: "path={{ item }} state=directory mode=0775"
       with_items:
         - "{{ gluster_brick_dir }}"
 
-    # pre-emptive gluster peer probe to make sure all the hosts are probed
-    # this is added because of a bug in the gluster_module
-    # - name: Configure peers (Only on the first host)
-    #   shell: gluster peer probe {{ item }}
-    #   with_items: "{{ groups.glusterfs-group }}"
-    #   when: "{{ inventory_hostname == groups.glusterfs-group[0] }}"
-
-    # from here we use the gluster_volume module
+    # use the gluster_volume module
     - name: Configure Gluster volume.
       gluster_volume:
         state: present

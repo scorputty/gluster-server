@@ -1,6 +1,5 @@
 ---
 # Task to install GlusterFS packages
-# notes to improve: look in to notify function
 
     - name: Install and start glusterfs server
       yum: name={{ item }} state=installed

@@ -1,28 +1,5 @@
 ---
-# Task to install setup local or remote repository
-# make this a general repo plan, switch between CentOS and RHEL
-# this is a temporary local repository un till the satellite channel is live
-# look in to Tags
-# removed unzip because of bug: 
-
-- block:
-  - name: install RedHat local repo
-    yum: name={{ item }} state=installed
-    with_items:
-      - createrepo
-  - name: copy and extract RH Storage repository zip
-    stat: path=/var/tmp/Packages/TRANS.TBL
-    register: extract_check
-  - unarchive: src=/var/tmp/Packages-RedHat-Storage.tgz dest=/var/tmp remote_src=yes
-    when: extract_check.stat.exists == False
-  - name: generate local repo data
-    stat: path=/etc/yum.repos.d/local.rhs.repo
-    register: rhs_repo_check
-  - command: /usr/bin/createrepo /var/tmp/Packages
-    when: rhs_repo_check.stat.exists == False
-  - name: copy local repo file to enable RH Storage repository
-    template: src=local.rhs.repo.j2 dest=/etc/yum.repos.d/local.rhs.repo
-  when: ansible_distribution == "RedHat"
+# Task to setup the glusterfs repository
 
 - block:
   - name: install CentOS repo

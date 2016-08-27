@@ -1,5 +1,6 @@
 ---
 # Use this file in Tower to kick off the installation of GlusterFS
+
 - hosts: all
   strategy: linear
   gather_facts: true
