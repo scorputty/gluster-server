@@ -8,10 +8,10 @@
 
     # pre-emptive gluster peer probe to make sure all the hosts are probed
     # this is added because of a bug in the gluster_module
-    - name: Configure peers (Only on the first host)
-      shell: gluster peer probe {{ item }}
-      with_items: "{{ groups.glusterfs-group }}"
-      when: "{{ inventory_hostname == groups.glusterfs-group[0] }}"
+    # - name: Configure peers (Only on the first host)
+    #   shell: gluster peer probe {{ item }}
+    #   with_items: "{{ groups.glusterfs-group }}"
+    #   when: "{{ inventory_hostname == groups.glusterfs-group[0] }}"
 
     # from here we use the gluster_volume module
     - name: Configure Gluster volume.
