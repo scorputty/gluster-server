@@ -20,7 +20,7 @@
         name: "{{ gluster_volume_name }}"
         brick: "{{ gluster_brick_dir }}"
         replicas: "{{ gluster_replicas }}"
-        cluster: "{{ groups.glusterfs-group | join(',') }}"
+        cluster: "{{ groups.glusterfs_group | join(',') }}"
         host: "{{ inventory_hostname }}"
         force: yes
       run_once: true
