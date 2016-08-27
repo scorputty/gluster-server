@@ -13,7 +13,7 @@
       - gluster-disks
 
   - name: tell me the key
-     debug: msg=”{{ fs_action.results[0].item.key }}”
+    debug: msg={{ fs_action.results[0].item.key }}
 
   - name: mounting GlusterFS brick filesystem
     mount: name={{ gluster_brick_dir }} src=/dev/{{ fs_action.results[0].item.key }} fstype={{ gluster_filesystem }}
