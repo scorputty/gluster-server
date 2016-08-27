@@ -8,7 +8,6 @@
           (item.value.model == "VBOX HARDDISK") and ((item.value.holders.0 is undefined) and (item.value.partitions|count == 0))
     with_dict: "{{ ansible_devices }}"
     register: fs_action
-    register: result
     tags:
       - gluster-disks
 
@@ -21,6 +20,6 @@
            dump=1
            passno=2
            state=mounted
-    when: result|succeeded
+    when: fs_action|succeeded
     tags:
       - gluster-mount
