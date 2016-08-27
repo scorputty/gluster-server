@@ -8,14 +8,14 @@ Requirements
 
 Atleast one unused extra disk per system and root like access for Ansible tower
 
-Role Variables
---------------
-defaults/main.yml
-    - gluster_package_version: '37'
-    - gluster_filesystem: "xfs"
-    - gluster_brick_dir: "/glusterfs/brick1"
-    - gluster_volume_name: "tri-repvol01"
-    - gluster_replicas: "3"
+## Role Variables
+
+    defaults/main.yml
+        - gluster_package_version: '37'
+        - gluster_filesystem: "xfs"
+        - gluster_brick_dir: "/glusterfs/brick1"
+        - gluster_volume_name: "tri-repvol01"
+        - gluster_replicas: "3"
 
 
 Dependencies
