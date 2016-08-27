@@ -25,7 +25,7 @@ none
 
 ## Example Playbook site.yml
 
-    - hosts: glusterfs-servers
+    - hosts: glusterfs_servers
       strategy: linear
       gather_facts: true
       roles:
